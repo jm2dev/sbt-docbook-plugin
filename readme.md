@@ -1,7 +1,7 @@
 DocBook Plugin for sbt
 ======================
 
-This project is a plugin for [sbt 0.10](https://github.com/harrah/xsbt)
+This project is a plugin for [sbt 0.11](https://github.com/harrah/xsbt)
 (and above) providing tasks to transform DocBook XML files to various output
 formats like HTML, PDF, EPUB, and others.
 
@@ -12,16 +12,18 @@ formats like PDF. It all runs out of the box!
 Usage
 -----
 
-1. Install [sbt 0.10](https://github.com/harrah/xsbt)
-2. Create a new directory for your project&mdash;e.g. `/home/user/paper`.
-3. In this directory, create a subdirectory where all your DocBook XML files
+1. Install [sbt 0.11](https://github.com/harrah/xsbt)
+2. Clone this repository and publish locally
+   <pre>
+   sbt package publish-local
+   </pre>
+3. Create a new directory for your project&mdash;e.g. `/home/user/paper`.
+4. In this directory, create a subdirectory where all your DocBook XML files
    will go to. By default, the plugin automatically searches the subdirectory
    `src/main/docbook`.
-4. In the same directory, create another subdirectory `project/plugins`. Create
-   a file called `build.sbt` in this directory with the following contents:
-  <pre>
-  resolvers += ScalaToolsSnapshots
-    
+5. In the same directory, create another subdirectory `project`. Create
+   a file called `plugins.sbt` in this directory with the following contents:
+  <pre> 
     libraryDependencies += "de.undercouch" %% "sbt-docbook-plugin" % "0.2-SNAPSHOT"
 </pre>
 5. Write a DocBook file
